@@ -22,10 +22,11 @@ public class PlayerTest {
         assertEquals(0, player.cardCount());
     }
 
-//    @Test
-//    public void canPickCard(){
-//
-//    }
+    @Test
+    public void playerPicksCard(){
+        player.pickCardFromDeck(deck);
+        assertEquals(1, player.cardCount());
+    }
 
 
 }

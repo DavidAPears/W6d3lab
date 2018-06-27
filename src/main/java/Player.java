@@ -13,5 +13,11 @@ public class Player {
     public int cardCount() {
         return this.hand.size();
     }
+
+    public void pickCardFromDeck(Deck deck) {
+        Card card = deck.removeChosenCardForPlayer();
+        this.hand.add(card);
+        System.out.println(this.hand);
+    }
 }
 
