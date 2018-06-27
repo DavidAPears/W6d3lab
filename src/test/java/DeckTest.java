@@ -25,4 +25,11 @@ public class DeckTest {
         assertEquals(52, deck.countCards());
     }
 
+    @Test
+    public void removeChosenCardForPlayer(){
+        deck.addCards();
+        deck.removeChosenCardForPlayer();
+        assertEquals(51, deck.countCards());
+    }
+
 }
