@@ -12,6 +12,7 @@ public class DeckTest {
     public void before(){
         deck = new Deck();
         card = new Card(SuitType.HEARTS, RankType.KING);
+
     }
 
     @Test
@@ -31,5 +32,7 @@ public class DeckTest {
         deck.removeChosenCardForPlayer();
         assertEquals(51, deck.countCards());
     }
+
+
 
 }

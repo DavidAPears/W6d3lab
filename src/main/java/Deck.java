@@ -23,7 +23,10 @@ public class Deck {
     }
 
     public Card removeChosenCardForPlayer() {
-        Collections.shuffle(mydeck);
         return this.mydeck.remove(0);
+    }
+
+    public void shuffleDeck(){
+        Collections.shuffle(mydeck);
     }
 }

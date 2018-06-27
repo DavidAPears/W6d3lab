@@ -13,8 +13,10 @@ public class PlayerTest {
     public void before(){
         player = new Player("Fred");
         deck = new Deck();
+        card = new Card(SuitType.CLUBS, RankType.EIGHT);
 
         deck.addCards();
+        deck.shuffleDeck();
     }
 
     @Test
@@ -23,10 +25,21 @@ public class PlayerTest {
     }
 
     @Test
+    public void addCard(){
+        player.addCard(card);
+        assertEquals(1, player.cardCount());
+    }
+
+    @Test
     public void playerPicksCard(){
         player.pickCardFromDeck(deck);
         assertEquals(1, player.cardCount());
     }
 
+    @Test
+    public void calculateHand(){
+        player.addCard(card);
+        assertEquals(8, player.cardValueFromEnum());
+    }
 
 }

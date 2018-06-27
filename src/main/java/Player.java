@@ -5,7 +5,7 @@ public class Player {
     private String name;
     private ArrayList<Card> hand;
 
-    public Player(String name){
+    public Player(String name) {
         this.name = name;
         this.hand = new ArrayList<>();
     }
@@ -17,7 +17,13 @@ public class Player {
     public void pickCardFromDeck(Deck deck) {
         Card card = deck.removeChosenCardForPlayer();
         this.hand.add(card);
-        System.out.println(this.hand);
+    }
+
+    public int cardValueFromEnum() {
+        return this.hand.get(0).getRank().getValue();
+    }
+
+    public void addCard(Card card) {
+        this.hand.add(card);
     }
 }
-
