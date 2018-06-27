@@ -18,14 +18,23 @@ public class GameTest {
         deck = new Deck();
 
         deck.addCards();
-        deck.shuffleDeck();
+//        deck.shuffleDeck();
     }
 
     @Test
-    public void newGame(){
+    public void newGameOneCard(){
         player1.pickCardFromDeck(deck);
         player2.pickCardFromDeck(deck);
-        game.playGame(player1, player2);
+        assertEquals(player2, game.playGame(player1, player2));
+    }
+
+    @Test
+    public void newGameTwoCards(){
+        player1.pickCardFromDeck(deck);
+        player1.pickCardFromDeck(deck);
+        player2.pickCardFromDeck(deck);
+        player2.pickCardFromDeck(deck);
+        game.playGameTwoCards(player1, player2);
     }
 
 }

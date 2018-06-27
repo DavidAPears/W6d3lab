@@ -23,7 +23,13 @@ public class Player {
         return this.hand.get(0).getRank().getValue();
     }
 
+    public int cardValueFromEnumTwoCards() {
+        return (this.hand.get(0).getRank().getValue() + this.hand.get(1).getRank().getValue());
+    }
+
     public void addCard(Card card) {
         this.hand.add(card);
     }
+
+
 }

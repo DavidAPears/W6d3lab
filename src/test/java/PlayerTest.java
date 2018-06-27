@@ -42,4 +42,10 @@ public class PlayerTest {
         assertEquals(8, player.cardValueFromEnum());
     }
 
+    @Test
+    public void cardValueFromEnumTwoCards(){
+        player.pickCardFromDeck(deck);
+        player.pickCardFromDeck(deck);
+        assertEquals(16, player.cardValueFromEnumTwoCards());
+    }
 }

@@ -11,12 +11,21 @@ public class Game {
 
     }
 
-    public void playGame(Player player1, Player player2){
+    public Player playGame(Player player1, Player player2){
         if (player1.cardValueFromEnum() > player2.cardValueFromEnum())
-            System.out.println("Player 1 WINS");
+            return player1;
           else if (player1.cardValueFromEnum() < player2.cardValueFromEnum())
-            System.out.println("Player 2 WINS");
-          else if (player1.cardValueFromEnum() == player2.cardValueFromEnum())
-            System.out.println("DRAW!");
+            return player2;
+          else
+            return null;
+    }
+
+    public Player playGameTwoCards(Player player1, Player player2){
+        if (player1.cardValueFromEnumTwoCards() > player2.cardValueFromEnumTwoCards())
+            return player1;
+        else if (player1.cardValueFromEnumTwoCards() < player2.cardValueFromEnumTwoCards())
+            return player2;
+        else
+            return null;
     }
 }
